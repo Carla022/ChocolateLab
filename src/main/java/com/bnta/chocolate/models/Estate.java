@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+@Entity (name = "estates")
 public class Estate {
 
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
 
@@ -19,7 +21,9 @@ public class Estate {
 
     private String country;
 
-
+    @OneToMany(mappedBy = "estate")
+    //there should be a player property in game, called player
+    @JsonIgnoreProperties({"estate"})
     private List<Chocolate> chocolates;
 
     public Estate(String name, String country) {
