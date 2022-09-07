@@ -20,6 +20,12 @@ public class EstateService {
         return estateRepository.findAll();
     }
 
+    public Estate saveEstate (Estate estate){
+        estateRepository.save(estate);
+        return estate;
+    }
+
+
 
 
 }
