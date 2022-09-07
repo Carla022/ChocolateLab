@@ -2,6 +2,7 @@ package com.bnta.chocolate.controllers;
 
 
 import com.bnta.chocolate.models.Chocolate;
+import com.bnta.chocolate.models.Estate;
 import com.bnta.chocolate.services.ChocolateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,11 +24,10 @@ public class ChocolateController {
         return new ResponseEntity<>(chocolates, HttpStatus.OK);
     }
 
-//    @PostMapping
-//    public ResponseEntity<Reply> startNewGame(@RequestParam Integer playerId){
-//        Reply reply = gameService.startNewGame(playerId);
-//        // we need to this playerId in the startnewGame, since we updated our parameters
-//        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+    @PostMapping
+    public ResponseEntity<Estate> addNewEstate(@RequestParam Long estateId) {
+        Chocolate savedChocolate = chocolateService.saveChocolate(estateId);
+        return new ResponseEntity<>(savedChocolate, HttpStatus.CREATED);
 
 
 

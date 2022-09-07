@@ -22,4 +22,9 @@ public class ChocolateService {
         return chocolateRepository.findAll();
     }
 
+    public Chocolate saveChocolate (Chocolate chocolate){
+        chocolateRepository.save(chocolate);
+        return chocolate;
+    }
+
 }
