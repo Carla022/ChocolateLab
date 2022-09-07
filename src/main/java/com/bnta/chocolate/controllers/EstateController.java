@@ -24,8 +24,6 @@ public class EstateController {
     }
 
     @PostMapping
-    //we need a request body, as a post mapping will always need to capture information
-    // it takes the information and turns it into a player object
     public ResponseEntity<Estate> addNewEstate(@RequestBody Estate estate) {
         Estate savedEstate = estateService.saveEstate(estate);
         return new ResponseEntity<>(savedEstate, HttpStatus.CREATED);

@@ -25,7 +25,7 @@ public class ChocolateController {
     }
 
     @PostMapping
-    public ResponseEntity<Estate> addNewEstate(@RequestParam Long estateId) {
+    public ResponseEntity<Chocolate> addNewEstate(@RequestParam Long estateId) {
         Chocolate savedChocolate = chocolateService.saveChocolate(estateId);
         return new ResponseEntity<>(savedChocolate, HttpStatus.CREATED);
 
